@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title> sudoku </title>
+<link rel="stylesheet" type="text/css" href="">
+<script>
+var tab = [ 
+["1", "8", "3", "7", "4", "6", "2", "5", "9"],
+["4", "7", "6", "2", "9", "5", "1", "3", "8"],
+["5", "9", "2", "1", "3", "8", "4", "6", "7"],
+["6", "5", "8", "9", "7", "2", "3", "1", "4"],
+["2", "3", "1", "5", "8", "4", "9", "7", "6"],
+["7", "4", "9", "3", "6", "1", "5", "8", "2"],
+["3", "2", "4", "8", "5", "7", "6", "9", "1"],
+["8", "1", "5", "6", "2", "9", "7", "4", "3"],
+["9", "6", "7", "4", "1", "3", "8", "2", "5"]
+];
+function spr(){
+var q = document.getElementById('t01').value;
+var w = document.getElementById('t02').value;
+var e = document.getElementById('t03').value;
+var r = document.getElementById('t04').value;
+var t = document.getElementById('t05').value;
+
+if (q==tab[0][1])
+{
+document.getElementById('t01').style.color = 'green';
+}
+else document.getElementById('t01').style.color = 'red';
+
+if (w==tab[0][3])
+{
+document.getElementById('t02').style.color = 'green';
+}
+else document.getElementById('t02').style.color = 'red';
+
+if (e==tab[0][4])
+{
+document.getElementById('t03').style.color = 'green';
+}
+else document.getElementById('t03').style.color = 'red';
+
+if (r==tab[0][5])
+{
+document.getElementById('t04').style.color = 'green';
+}
+else document.getElementById('t04').style.color = 'red';
+
+if (t==tab[0][6])
+{
+document.getElementById('t05').style.color = 'green';
+}
+else document.getElementById('t05').style.color = 'red';
+
+
+
+
+
+}
+/*
+document.write("<table border='1px'>");
+for(var i=0; i<=3; i++)
+{
+document.write("<tr>");
+for(var j=0; j<=3; j++)
+{
+document.write("<td>"+tab[i][j]+"</td>");
+}
+document.write("</tr>");
+}*/
+
+</script>
+<style>
+table, td{
+border: 1px solid black; 
+border-collapse: collapse;
+text-align: center;
+}
+td{
+width: 50px;
+height: 50px;
+}
+#sp{
+width: 90px;
+}
+.lb{
+border-right: 3px solid black;
+}
+.ld{
+border-bottom: 3px solid black;
+}
+input{
+height: 28px;
+width: 28px;
+border: none;
+font-size: 15px;
+font-weight: bold;
+text-align: center;
+}
+
+</style>
+</head>
+<body>
+<table border="1px">
+<tr><td>1</td><td><input type="text" id="t01"></td><td class="lb">3</td><td><input type="text" id="t02"></td><td><input type="text" id="t03"></td><td class="lb"><input type="text" id="t04"></td><td><input type="text" id="t05"></td><td>5</td><td>9</td></tr>
+
+<tr><td><input type="text" id="t21"></td><td>7</td><td class="lb"><input type="text" id="t22"></td><td>2</td><td>9</td><td class="lb"><input type="text" id="t23"></td><td>1</td><td><input type="text" id="t24"></td><td>8</td></tr>
+
+<tr class="ld"><td><input type="text" id="t31"></td><td><input type="text" id="t32"></td><td class="lb">2</td><td><input type="text" id="t33"></td><td>3</td><td class="lb">8</td><td><input type="text" id="t34"></td><td><input type="text" id="t35"></td><td><input type="text" id="t36"></td></tr>
+
+<tr><td><input type="text" id="t41"></td><td>5</td><td class="lb">8</td><td><input type="text" id="t42"></td><td><input type="text" id="t43"></td><td class="lb">2</td><td>3</td><td><input type="text" id="t44"></td><td><input type="text" id="t45"></td></tr>
+
+<tr><td><input type="text" id="t51"></td><td>3</td><td class="lb"><input type="text" id="t52"></td><td>5</td><td><input type="text" id="t53"></td><td class="lb"><input type="text" id="t54"></td><td><input type="text" id="t51"></td><td>7</td><td>6</td></tr>
+
+<tr class="ld"><td>7</td><td><input type="text" id="t61"></td><td class="lb"><input type="text" id="t62"></td><td><input type="text" id="t63"></td><td>6</td><td class="lb">1</td><td><input type="text" id="t64"></td><td>8</td><td><input type="text" id="t65"></td></tr>
+
+<tr><td>3</td><td>2</td><td class="lb">4</td><td>8</td><td><input type="text" id="t71"></td><td class="lb"><input type="text" id="t72"></td><td>6</td><td>9</td><td><input type="text" id="t73"></td></tr>
+
+<tr><td><input type="text" id="t81"></td><td><input type="text" id="t82"></td><td class="lb">5</td><td>6</td><td>2</td><td class="lb"><input type="text" id="t83"></td><td>7</td><td><input type="text" id="t84"></td><td><input type="text" id="t85"></td></tr>
+
+<tr><td>9</td><td><input type="text" id="t91"></td><td class="lb"><input type="text" id="t92"></td><td><input type="text" id="t93"></td><td>1</td><td class="lb">3</td><td><input type="text" id="t94"></td><td><input type="text" id="t95"></td><td>5</td></tr>
+</table>
+<input type="button" onclick="spr()" value="sprawdz" id="sp">
+</body>
+</html>
